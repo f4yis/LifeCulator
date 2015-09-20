@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+
+    <title>LifeCulator</title>
+    <link rel="stylesheet" type="text/css" href="style/style.css" />
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"/>
+    <link href='font/font.css' rel='stylesheet' type='text/css'/>
+    <!-- Inline scripts are forbidden in Firefox OS apps (CSP restrictions),
+         so we use a script file. -->
+    <script src="script/app.js" defer></script>
+  </head>
+
+  <body style="background:#fff;">
+    <header id="topbar-home" style="background:#c0392b;">
+
+      <div id="name">EMI</div>
+
+    </header>
+    <div class="clr"></div>
+    <input id="btn-op" type="button" onClick="JavaScript:draw()" value="&#10310;"/>
+    <div id="drawer" style="transition:all 0.5s ease">
+      <a href="trip.html" id="road-trip">Road Trip</a>
+      <a href="electric.html" id="electricity">Electricity</a>
+      <a href="emi.html" id="emi">EMI</a>
+      <a href="bmi.html" id="bmi">BMI</a>
+      <a href="income.html" id="income">Income Tax</a>
+      <a href="about.html" id="credit">Credit</a>
+    </div>
+    <div id="content" >
+      <form name="form1" id="form1" onsubmit="event.preventDefault()">
+        <input type="text" placeholder="Loan / Principle amount" name="amount"/>
+        <input type="text" placeholder="Rate of interest per month in %" name="rate"/>
+        <input type="text" placeholder="No. of month to complete" name="install"/>
+        <input type="submit" value="Calculate" name="calc" onClick="JavaScript:emi()"/>
+      </form>
+      <div id="result"></div>
+    </div>
+  </body>
+
+</html>
